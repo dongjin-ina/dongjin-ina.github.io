@@ -17,19 +17,43 @@
       content="https://raw.githubusercontent.com/dongjin-ina/dongjin-ina.github.io/main/src/images/thumb.jpg"
     />
     <meta property="og:url" content="https://dongjin-ina.github.io/" />
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+      Kakao.init("a0968cd4dba7e9802a424a955a5fa705"); // 카카오 SDK 초기화
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <button id="kakao-link-btn">모바일청첩장 공유하기</button>
+    <script>
+      document
+        .getElementById("kakao-link-btn")
+        .addEventListener("click", function () {
+          Kakao.Share.sendDefault({
+            objectType: "feed", // 기본 템플릿 (카드형)
+            content: {
+              title: "동진♡인아 결혼합니다.",
+              description: "25년 5월 24일 11시 | 서울대 연구공원 웨딩홀",
+              imageUrl:
+                "https://raw.githubusercontent.com/dongjin-ina/dongjin-ina.github.io/main/src/images/thumb.jpg", // 4:3 비율 이미지 URL
+              link: {
+                mobileWebUrl: "https://dongjin-ina.github.io/", // 모바일에서 열릴 링크
+                webUrl: "https://dongjin-ina.github.io/", // PC에서 열릴 링크
+              },
+            },
+            buttons: [
+              {
+                title: "모바일청첩장 보기",
+                link: {
+                  mobileWebUrl: "https://dongjin-ina.github.io/",
+                  webUrl: "https://dongjin-ina.github.io/",
+                },
+              },
+            ],
+          });
+        });
+    </script>
   </body>
 </html>

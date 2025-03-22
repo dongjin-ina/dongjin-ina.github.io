@@ -1,20 +1,24 @@
 @font-face {
-  /* font-family: "Maruburi"; */
-  /* src: url("/src/fonts/MaruBuri-Regular.ttf") format("truetype"); */
   font-family: "GowunBatang";
   src: url("/src/fonts/GowunBatang-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-* {
-  /* font-family: "Maruburi", sans-serif; */
-  font-family: "GowunBatang", sans-serif;
+:root {
+  --fontBasic: #292d2d;
+  --fontLight: #898158;
+  --fontRed: #a61f24;
+  --backBasic: #f6f7f3;
+  --backGreen: #cbdb3b;
 }
 
-h2 {
-  font-size: 1.5em;
-  margin: 0 auto 2em;
+.fontRed {
+  color: var(--fontRed);
+}
+
+* {
+  font-family: "GowunBatang", sans-serif;
 }
 
 body {
@@ -22,14 +26,22 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  background: hsl(30, 30%, 90%);
+  color: var(--fontBasic);
+  /* background: hsl(30, 30%, 90%); */
+}
+
+h2 {
+  font-size: 1em;
+  margin: 0 auto 6.5rem;
+  color: var(--fontLight);
 }
 
 .container {
   max-width: 500px;
   margin: 0 auto;
   padding: 0;
-  background-color: #f0f2e5;
+  border: 1pt solid red;
+  /* background-color: #f0f2e5; */
 }
 
 .img-box {
@@ -42,16 +54,23 @@ body {
 .img-box .overlay-text {
   position: absolute;
   width: 100%;
-  top: 20%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.5em;
   font-weight: bold;
 }
+.img-box .overlay-text p {
+  margin: 0 auto 0;
+}
 .img-box .out-text {
-  font-size: 1em;
+  position: absolute;
+  width: 100%;
+  top: 79%;
+  font-size: 1.1em;
   font-weight: bold;
   margin: 1em auto 4.5em;
+  color: var(--fontLight);
 }
 .img-box .out-text p {
   margin: 0.5em;
@@ -70,11 +89,18 @@ body {
 .loca-box,
 .acc-box,
 .gal-box {
-  margin: 5em auto 5em;
+  padding: 4rem 0 7rem;
+}
+
+.date-box {
+  background-color: var(--backBasic);
 }
 
 .invit-box .invit-letter {
-  margin: 0 auto 2em;
+  margin: 0 auto 5rem;
+}
+.invit-box .invit-letter p {
+  margin: 0 auto 0.5rem;
 }
 
 .invit-box .invit-name {
@@ -101,25 +127,27 @@ body {
 }
 /* ------------- */
 
-.date-box .countdown {
-  margin: -2em auto 2em;
-  padding: 0.5em 1em;
-  border-radius: 0.5em;
-  width: fit-content;
-  font-size: 1em;
-  font-weight: bold;
-  background-color: hsl(30, 30%, 70%);
-}
-
 .date-box .cal {
   width: fit-content;
-  margin: auto;
+  margin: 0 auto 3rem;
   padding: 0.5em 1em;
   border-radius: 1em;
-  background-color: hsl(30, 30%, 90%);
+  /* background-color: hsl(30, 30%, 90%); */
 }
 
+.date-box .date-date {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: -1rem 0 0;
+}
+.date-box .date-time {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 2rem;
+  color: var(--fontLight);
+}
 .date-box .cal table {
+  border-top: 1px solid var(--fontLight);
+  border-bottom: 1px solid var(--fontLight);
   border-collapse: collapse;
 }
 
@@ -129,24 +157,25 @@ body {
 }
 
 .date-box .cal thead td {
+  padding-top: 1rem;
   font-weight: bold;
 }
 
-.date-box .cal thead td.title {
-  font-size: 1.5em;
-  color: black;
+.date-box .cal tbody tr:last-child td {
+  padding-bottom: 1rem;
+  font-weight: bold;
 }
 
 .date-box .cal tbody {
-  border-top: 1pt solid hsl(0, 0%, 80%);
+  /* border-top: 1pt solid hsl(0, 0%, 80%); */
 }
 
 .date-box .cal td:first-child {
-  color: hsl(0, 50%, 50%);
+  color: var(--fontRed);
 }
 
 .date-box .cal td:last-child {
-  color: hsl(30, 50%, 50%);
+  /* color: hsl(30, 50%, 50%); */
 }
 
 .date-box .cal .wedding-date {
@@ -155,12 +184,22 @@ body {
   border-radius: 1em;
   font-size: 1.2em;
   margin: auto;
-  /* font-weight: bold; */
-  background-color: hsl(30, 50%, 50%);
-  color: white;
+  font-weight: bold;
+  background-color: var(--backGreen);
+  /* color: white; */
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.date-box .countdown {
+  margin: 0em auto 2em;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  width: fit-content;
+  font-size: 1em;
+  font-weight: bold;
+  /* background-color: hsl(30, 30%, 70%); */
 }
 
 /* ------------------- */
@@ -190,12 +229,12 @@ body {
   margin: 0;
   border-radius: 0;
   border-top-right-radius: 0.5em;
-  border: 1px solid hsl(30, 30%, 75%);
-  background-color: hsl(30, 30%, 85%);
-  color: black;
+  /* border: 1px solid hsl(30, 30%, 75%); */
+  /* background-color: hsl(30, 30%, 85%); */
+  /* color: black; */
 }
 .acc-box .acc-bttn Button.act {
-  background-color: hsl(30, 30%, 75%);
+  /* background-color: hsl(30, 30%, 75%); */
   font-size: 1.2em;
   margin-top: -0.2em;
   font-weight: bold;
@@ -205,7 +244,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 3em;
-  background-color: hsl(30, 30%, 75%);
+  /* background-color: hsl(30, 30%, 75%); */
 }
 .acc-box .acc-info .bnk {
   display: inline-block;
@@ -216,8 +255,8 @@ body {
 }
 
 button {
-  background: hsl(30, 30%, 50%);
-  color: white;
+  /* background: hsl(30, 30%, 50%); */
+  /* color: white; */
   border: none;
   margin: 5px;
   padding: 5px;
@@ -226,5 +265,5 @@ button {
 }
 
 button:hover {
-  background: hsl(00, 30%, 50%);
+  /* background: hsl(00, 30%, 50%); */
 }

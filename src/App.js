@@ -18,15 +18,20 @@ const CountdownRenderer = ({ days, hours, minutes, seconds, completed }) => {
   } else {
     let timeText = "";
     if (days > 0) {
-      timeText = `결혼식까지 ${days}일 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다.`;
+      timeText = `${days}일`;
     } else if (hours > 0) {
-      timeText = `결혼식까지 ${hours}시간 ${minutes}분 ${seconds}초 남았습니다.`;
+      timeText = `${hours}시간`;
     } else if (minutes > 0) {
-      timeText = `결혼식까지 ${minutes}분 ${seconds}초 남았습니다.`;
+      timeText = `${minutes}분`;
     } else {
-      timeText = `결혼식까지 ${seconds}초 남았습니다.`;
+      timeText = `${seconds}초`;
     }
-    return <div className="countdown">{timeText}</div>;
+    return (
+      <div className="countdown">
+        동진 <span className="fontRed">♥</span> 인아의 결혼식이{" "}
+        <span className="fontRed">{timeText}</span> 남았습니다.
+      </div>
+    );
   }
 };
 
@@ -35,11 +40,6 @@ const MyCal = () => {
     <div className="cal">
       <table>
         <thead>
-          <tr>
-            <td className="title" colSpan="7">
-              5월
-            </td>
-          </tr>
           <tr>
             <td>일</td>
             <td>월</td>
@@ -62,8 +62,8 @@ const MyCal = () => {
           </tr>
           <tr>
             <td>4</td>
-            <td>5</td>
-            <td>6</td>
+            <td className="fontRed">5</td>
+            <td className="fontRed">6</td>
             <td>7</td>
             <td>8</td>
             <td>9</td>
@@ -106,11 +106,11 @@ const MyCal = () => {
 
 const accInfoList = [
   ["신동진", "우리", "978-045427-02-101"],
-  ["최인아", "ㅁ", "000-000-000"],
-  ["신완기", "신한", "325-04-499446"],
+  ["최인아", "신한", "110-437-946984"],
+  ["신완기", "신한", "110-048-831781"],
   ["김명재", "국민", "465125-91-106926"],
-  ["최삼태", "ㅁ", "000-000-000"],
-  ["이영욱", "ㅁ", "000-000-000"],
+  ["최삼태", "부산", "224-12-021215-4"],
+  ["이영욱", "국민", "666601-04-118304"],
 ];
 
 const AccList = () => {
@@ -174,12 +174,12 @@ function App() {
           <p>결혼식에 초대합니다.</p>
         </div>
         <div className="out-text">
-          <p>2025년 5월 24일(토) 낮 11시</p>
+          <p>2025년 5월 24일 토요일 낮 11시</p>
           <p>서울대학교 연구공원 웨딩홀</p>
         </div>
       </div>
 
-      <div className="hline" />
+      {/* <div className="hline" /> */}
 
       <div className="invit-box">
         <h2>모시는 글</h2>
@@ -200,12 +200,13 @@ function App() {
         </div>
       </div>
 
-      <div className="hline" />
+      {/* <div className="hline" /> */}
 
       <div className="date-box">
-        <h2>2025년 5월 24일 토요일 오전 11시</h2>
-        <Countdown date={weddingDate} renderer={CountdownRenderer} />
+        <div className="date-date">2025년 5월 24일</div>
+        <div className="date-time">토요일 낮 11시</div>
         <MyCal />
+        <Countdown date={weddingDate} renderer={CountdownRenderer} />
       </div>
 
       <div className="hline" />

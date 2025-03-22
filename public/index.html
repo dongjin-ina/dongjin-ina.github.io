@@ -21,39 +21,36 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
       Kakao.init("a0968cd4dba7e9802a424a955a5fa705"); // 카카오 SDK 초기화
+
+      function shareKakao() {
+        Kakao.Share.sendDefault({
+          objectType: "feed",
+          content: {
+            title: "동진♡인아 결혼합니다.",
+            description: "25년 5월 24일 11시 | 서울대 연구공원 웨딩홀",
+            imageUrl:
+              "https://raw.githubusercontent.com/dongjin-ina/dongjin-ina.github.io/main/src/images/thumb.jpg",
+            link: {
+              mobileWebUrl: "https://dongjin-ina.github.io/",
+              webUrl: "https://dongjin-ina.github.io/",
+            },
+          },
+          buttons: [
+            {
+              title: "모바일청첩장 보기",
+              link: {
+                mobileWebUrl: "https://dongjin-ina.github.io/",
+                webUrl: "https://dongjin-ina.github.io/",
+              },
+            },
+          ],
+        });
+      }
     </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <button id="kakao-link-btn">모바일청첩장 공유하기</button>
-    <script>
-      document
-        .getElementById("kakao-link-btn")
-        .addEventListener("click", function () {
-          Kakao.Share.sendDefault({
-            objectType: "feed", // 기본 템플릿 (카드형)
-            content: {
-              title: "동진♡인아 결혼합니다.",
-              description: "25년 5월 24일 11시 | 서울대 연구공원 웨딩홀",
-              imageUrl:
-                "https://raw.githubusercontent.com/dongjin-ina/dongjin-ina.github.io/main/src/images/thumb.jpg", // 4:3 비율 이미지 URL
-              link: {
-                mobileWebUrl: "https://dongjin-ina.github.io/", // 모바일에서 열릴 링크
-                webUrl: "https://dongjin-ina.github.io/", // PC에서 열릴 링크
-              },
-            },
-            buttons: [
-              {
-                title: "모바일청첩장 보기",
-                link: {
-                  mobileWebUrl: "https://dongjin-ina.github.io/",
-                  webUrl: "https://dongjin-ina.github.io/",
-                },
-              },
-            ],
-          });
-        });
-    </script>
+    <button onclick="shareKakao()">모바일 청첩장 공유하기</button>
   </body>
 </html>

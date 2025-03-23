@@ -16,14 +16,14 @@ const ImgBox = () => {
         <img src={titleUnderline} alt="밑줄" />
       </div>
       <div className="tag-div">
-        <div className="tag-tail-dung">신랑 신동진</div>
-        <div className="tag-tail-bbeum">신부 최인아</div>
+        <div className="tag-tail-dung">
+          <span>신랑</span> 신동진
+        </div>
+        <div className="tag-tail-bbeum">
+          <span>신부</span> 최인아
+        </div>
         <img className="tag-tail-dung" src={pigTailDung} alt="동진 꼬리" />
         <img className="tag-tail-bbeum" src={pigTailBbeum} alt="동진 꼬리" />
-      </div>
-      <div className="out-text">
-        <p>2025년 5월 24일 토요일 낮 11시</p>
-        <p>서울대학교 연구공원 웨딩홀</p>
       </div>
     </div>
   );

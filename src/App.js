@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import ImgBox from "./components/ImgBox";
+import StampBox from "./components/StampBox";
 import InvitBox from "./components/InvitBox";
 import "./App.css";
 import DateBox from "./components/DateBox";
 import CopyButton from "./components/CopyButton";
-import ImgBox from "./components/ImgBox";
 
 const copyToClipboard = (text, almsg = "계좌번호가 복사되었습니다!") => {
   navigator.clipboard
@@ -35,6 +36,8 @@ function App() {
   return (
     <div className="container">
       <ImgBox />
+
+      <StampBox />
 
       <InvitBox />
 

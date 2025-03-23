@@ -44,6 +44,8 @@
 :root {
   --fontBasic: #292d2d;
   --fontBlue: #5395c7;
+  --fontGreen: #74bb35;
+  --fontOrange: #ef846b;
   --fontLight: #898158;
   --fontRed: #a61f24;
   --backBasic: #f6f7f3;
@@ -140,6 +142,9 @@ h2 {
   top: 44%;
   left: 28%;
 }
+.img-box .tag-div div.tag-tail-dung span {
+  color: var(--fontGreen);
+}
 .img-box .tag-div img.tag-tail-bbeum {
   position: absolute;
   width: 7%;
@@ -152,18 +157,35 @@ h2 {
   top: 47%;
   left: 69%;
 }
-
-.img-box .out-text {
-  position: absolute;
-  width: 100%;
-  top: 79%;
-  font-size: 1.1em;
-  font-weight: bold;
-  margin: 1em auto 4.5em;
-  color: var(--fontLight);
+.img-box .tag-div div.tag-tail-bbeum span {
+  color: var(--fontOrange);
 }
-.img-box .out-text p {
-  margin: 0.5em;
+
+/* ------------------------------- */
+.img-box {
+  position: relative;
+  text-align: center;
+}
+
+.stamp-box {
+  position: relative;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 4rem auto 0;
+}
+.stamp-box img {
+  top: 0%;
+  width: 60%;
+}
+.stamp-box .overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+}
+.stamp-box .overlay-text p {
+  margin: 0.7rem 0 0.9rem;
 }
 
 /* -------------------------------- */

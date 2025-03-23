@@ -1,7 +1,10 @@
+import invitBirds from "../icons/invit_birds.png";
+
 const InvitBox = () => {
   return (
     <div className="invit-box">
-      <h2>모시는 글</h2>
+      <img src={invitBirds} alt="초대합니다." />
+      <div className="title">소중한 분들을 초대합니다</div>
       <div className="invit-letter">
         <p>두 사람이 한 가정을 이루고자 합니다.</p>
         <p>평생 서로 사랑하고 베풀며 살겠습니다.</p>

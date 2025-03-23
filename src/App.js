@@ -5,6 +5,8 @@ import InvitBox from "./components/InvitBox";
 import "./App.css";
 import DateBox from "./components/DateBox";
 import CopyButton from "./components/CopyButton";
+import Hline from "./components/Hline";
+import LocaBox from "./components/LocaBox";
 
 const copyToClipboard = (text, almsg = "계좌번호가 복사되었습니다!") => {
   navigator.clipboard
@@ -41,54 +43,13 @@ function App() {
 
       <InvitBox />
 
+      <Hline />
+
       <DateBox />
 
-      <div className="loca-box">
-        <h2> 서울대학교 연구공원 웨딩홀</h2>
-        <div className="loca-map">지도?</div>
-        <div>
-          서울 관악구 관악로 1 연구공원 본관 1층
-          <button
-            onClick={() =>
-              copyToClipboard(
-                "서울 관악구 관악로 1 연구공원 본관 1층",
-                "결혼식장 주소가 복사되었습니다."
-              )
-            }
-          >
-            복사
-          </button>
-        </div>
-        <div>
-          <button
-            onClick={() =>
-              window.open(
-                "https://map.naver.com/p/search/서울대학교%20연구공원%20웨딩홀/place/13321741",
-                "_blank",
-                "noopener,noreferrer"
-              )
-            }
-          >
-            네이버 지도에서 열기
-          </button>
-        </div>
-        <div>
-          <button
-            onClick={() => window.open("", "_blank", "noopener,noreferrer")}
-          >
-            다음 지도에서 열기
-          </button>
-        </div>
-        <div>
-          <button
-            onClick={() => window.open("", "_blank", "noopener,noreferrer")}
-          >
-            T맵에서 열기
-          </button>
-        </div>
-      </div>
+      <Hline />
 
-      {/* <div className="hline" /> */}
+      <LocaBox />
 
       <div className="acc-box">
         <h2>마음 전하실 곳</h2>

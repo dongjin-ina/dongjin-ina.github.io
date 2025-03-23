@@ -104,11 +104,6 @@ h2 {
   width: 100%;
 }
 .img-box .overlay-text {
-  position: absolute;
-  width: fit-content;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-size: 2rem;
   font-weight: bold;
   color: var(--fontBlue);
@@ -116,14 +111,21 @@ h2 {
 }
 .img-box .overlay-text .title-text {
   display: flex;
-  margin: 0 auto -1rem;
-}
-.img-box .overlay-text .title-text div {
-  display: inline-block;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -100%);
 }
 .img-box .overlay-text .titleFont {
   margin: 0.3rem 0.8rem 0;
   font-family: "NanumBarunpen";
+}
+.img-box .overlay-text img {
+  position: absolute;
+  width: 50%;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .img-box .tag-div * {

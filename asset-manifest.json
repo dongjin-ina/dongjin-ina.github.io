@@ -1,17 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.b8c5aaa2.css",
-    "main.js": "/static/js/main.6265be11.js",
+    "main.css": "/static/css/main.afb04862.css",
+    "main.js": "/static/js/main.d99fc4d1.js",
     "static/js/453.4e7b410a.chunk.js": "/static/js/453.4e7b410a.chunk.js",
-    "static/media/GowunBatang-Regular.ttf": "/static/media/GowunBatang-Regular.7f740a4b8989e58f2b4f.ttf",
-    "static/media/main.jpg": "/static/media/main.798705dc3c5988f4fe9b.jpg",
+    "static/media/NanumBarunpenB.otf": "/static/media/NanumBarunpenB.f4ab6ed02776644d3bab.otf",
+    "static/media/NanumBarunpenR.otf": "/static/media/NanumBarunpenR.84afd5b66d36ce946c5d.otf",
+    "static/media/강원교육새음.ttf": "/static/media/강원교육새음.b047681cd0587f653a47.ttf",
+    "static/media/NanumSquareB.ttf": "/static/media/NanumSquareB.ebe0aa17b7967cd61f16.ttf",
+    "static/media/NanumSquareR.ttf": "/static/media/NanumSquareR.924c33f60f994924964c.ttf",
+    "static/media/main.jpg": "/static/media/main.0cc6ecc0540fc2376d59.jpg",
     "index.html": "/index.html",
-    "main.b8c5aaa2.css.map": "/static/css/main.b8c5aaa2.css.map",
-    "main.6265be11.js.map": "/static/js/main.6265be11.js.map",
+    "main.afb04862.css.map": "/static/css/main.afb04862.css.map",
+    "main.d99fc4d1.js.map": "/static/js/main.d99fc4d1.js.map",
     "453.4e7b410a.chunk.js.map": "/static/js/453.4e7b410a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8c5aaa2.css",
-    "static/js/main.6265be11.js"
+    "static/css/main.afb04862.css",
+    "static/js/main.d99fc4d1.js"
   ]
 }

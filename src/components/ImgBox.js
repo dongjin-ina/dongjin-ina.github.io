@@ -16,6 +16,8 @@ const ImgBox = () => {
         <img src={titleUnderline} alt="밑줄" />
       </div>
       <div className="tag-div">
+        <div className="tag-tail-dung">신랑 신동진</div>
+        <div className="tag-tail-bbeum">신부 최인아</div>
         <img className="tag-tail-dung" src={pigTailDung} alt="동진 꼬리" />
         <img className="tag-tail-bbeum" src={pigTailBbeum} alt="동진 꼬리" />
       </div>

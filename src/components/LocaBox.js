@@ -18,37 +18,49 @@ const LocaBox = () => {
       <img src="" alt="지도" />
       <div className="bttns">
         <button
-          onClick={() =>
-            window.open(
-              "https://map.naver.com/v5/search/서울대학교%20연구공원%20웨딩홀",
-              "_blank",
-              "noopener,noreferrer"
-            )
-          }
+          onClick={() => {
+            window.location.href =
+              "naversearchapp://mapsearch?query=서울대학교 연구공원 웨딩홀";
+            setTimeout(() => {
+              window.open(
+                "https://map.naver.com/v5/search/서울대학교%20연구공원%20웨딩홀",
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }, 500);
+          }}
         >
           <img src={naverMap} alt="네이버지도" />
           네이버지도
         </button>
         <button
-          onClick={() =>
-            window.open(
-              "kakaonavi://search?q=서울대학교 연구공원 웨딩홀",
-              "_blank",
-              "noopener,noreferrer"
-            )
-          }
+          onClick={() => {
+            window.location.href =
+              "kakaonavi://search?q=서울대학교 연구공원 웨딩홀";
+            setTimeout(() => {
+              window.open(
+                "https://map.kakao.com/?q=서울대학교 연구공원 웨딩홀",
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }, 500);
+          }}
         >
           <img src={kakaoMap} alt="카카오지도" />
           카카오지도
         </button>
         <button
-          onClick={() =>
-            window.open(
-              "tmap://search?name=서울대학교 연구공원 웨딩홀",
-              "_blank",
-              "noopener,noreferrer"
-            )
-          }
+          onClick={() => {
+            window.location.href =
+              "tmap://search?name=서울대학교 연구공원 웨딩홀";
+            setTimeout(() => {
+              window.open(
+                "https://map.kakao.com/?q=서울대학교 연구공원 웨딩홀",
+                "_blank",
+                "noopener,noreferrer"
+              );
+            }, 500);
+          }}
         >
           <img src={tMap} alt="티맵" />
           티맵

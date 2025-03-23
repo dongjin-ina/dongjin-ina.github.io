@@ -1,17 +1,54 @@
 @font-face {
-  font-family: "GowunBatang";
-  src: url("/src/fonts/GowunBatang-Regular.ttf") format("truetype");
+  font-family: "NanumSquare";
+  src: url("/src/fonts/NanumSquareR.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NanumSquare";
+  src: url("/src/fonts/NanumSquareB.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NanumBarunpen";
+  src: url("/src/fonts/NanumBarunpenR.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NanumBarunpen";
+  src: url("/src/fonts/NanumBarunpenB.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NameTag";
+  src: url("/src/fonts/강원교육새음.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 :root {
   --fontBasic: #292d2d;
+  --fontBlue: #5395c7;
   --fontLight: #898158;
   --fontRed: #a61f24;
   --backBasic: #f6f7f3;
   --backGreen: #cbdb3b;
   font-size: 3.2vw;
+}
+
+.mobileScreen {
+  z-index: 900;
+  position: fixed;
+  width: 500px;
+  height: 850px;
+  border: 1px solid red;
 }
 
 @media (min-width: 500px) {
@@ -25,11 +62,10 @@
 }
 
 * {
-  font-family: "GowunBatang", sans-serif;
+  font-family: "NanumSquare", sans-serif;
 }
 
 body {
-  font-family: "Maruburi", sans-serif;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -47,10 +83,9 @@ h2 {
   max-width: 500px;
   margin: 0 auto;
   padding: 0;
-  border: 1pt solid red;
-  /* background-color: #f0f2e5; */
 }
 
+/* -------------------------------- */
 .img-box {
   position: relative;
   text-align: center;
@@ -60,16 +95,40 @@ h2 {
 }
 .img-box .overlay-text {
   position: absolute;
-  width: 100%;
-  top: 15%;
+  width: fit-content;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.5em;
+  font-size: 2rem;
   font-weight: bold;
+  color: var(--fontBlue);
+  white-space: nowrap;
 }
-.img-box .overlay-text p {
-  margin: 0 auto 0;
+.img-box .overlay-text .title-text {
+  display: flex;
+  margin: 0 auto -1rem;
 }
+.img-box .overlay-text .title-text div {
+  display: inline-block;
+}
+.img-box .overlay-text .titleFont {
+  margin: 0.3rem 0.8rem 0;
+  font-family: "NanumBarunpen";
+}
+
+.img-box .tag-div img.tag-tail-dung {
+  position: absolute;
+  width: auto;
+  top: 41%;
+  left: 20%;
+}
+.img-box .tag-div img.tag-tail-bbeum {
+  position: absolute;
+  width: auto;
+  top: 42%;
+  left: 71%;
+}
+
 .img-box .out-text {
   position: absolute;
   width: 100%;
@@ -82,6 +141,8 @@ h2 {
 .img-box .out-text p {
   margin: 0.5em;
 }
+
+/* -------------------------------- */
 
 .hline {
   width: 100%;
@@ -262,13 +323,22 @@ h2 {
 }
 
 button {
-  /* background: hsl(30, 30%, 50%); */
-  /* color: white; */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   border: none;
-  margin: 5px;
-  padding: 5px;
+  padding: 0;
+  height: 1.6rem;
   cursor: pointer;
   border-radius: 5px;
+}
+
+button div {
+  margin-left: 0.5rem;
+}
+button img {
+  margin: 0 0.5rem;
+  height: 1rem;
 }
 
 button:hover {

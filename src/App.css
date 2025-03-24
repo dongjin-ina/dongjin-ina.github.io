@@ -45,7 +45,7 @@
   --fontRed: #a61f24;
   --backBasic: #f6f7f3;
   --backGreen: #cbdb3b;
-  font-size: 4vw;
+  font-size: 4%;
 }
 
 @media (min-width: 500px) {

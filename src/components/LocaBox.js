@@ -4,6 +4,7 @@ import kakaoMap from "../icons/kakao_map.png";
 import tMap from "../icons/t_map.png";
 import bus from "../icons/bus.png";
 import car from "../icons/car.png";
+import mapImg from "../icons/map.png";
 
 const LocaBox = () => {
   return (
@@ -12,12 +13,12 @@ const LocaBox = () => {
       <div>
         <p>서울 관악구 관악로 1</p>
         <p>서울대학교 연구공원 본관 1층 </p>
-        <CopyButton
+        {/* <CopyButton
           text="서울 관악구 관악로 1 연구공원 본관 1층"
           almsg="결혼식장 주소가 복사되었습니다."
-        />
+        /> */}
       </div>
-      <img src="" alt="지도" />
+      <img width="90%" src={mapImg} alt="지도" />
       <div className="bttns">
         <button
           onClick={() => {

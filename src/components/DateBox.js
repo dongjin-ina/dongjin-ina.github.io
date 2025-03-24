@@ -1,23 +1,44 @@
 import Countdown from "react-countdown";
+import calFrame from "../icons/cal_frame.png";
+
 const weddingDate = new Date("2025-05-24T11:00:00");
+
 const CountdownRenderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
     return <div className="countdown">축하해주신 모든 분들께 감사합니다.</div>;
   } else {
-    let timeText = "";
+    let TimeText = null;
     if (days > 0) {
-      timeText = `${days}일`;
+      TimeText = (
+        <span>
+          <span className="fontRed">{days}</span>일
+        </span>
+      );
     } else if (hours > 0) {
-      timeText = `${hours}시간`;
+      TimeText = (
+        <span>
+          <span className="fontRed">{hours}</span>시간
+        </span>
+      );
     } else if (minutes > 0) {
-      timeText = `${minutes}분`;
+      TimeText = (
+        <span>
+          <span className="fontRed">{minutes}</span>분
+        </span>
+      );
     } else {
-      timeText = `${seconds}초`;
+      TimeText = (
+        <span>
+          <span className="fontRed">{seconds}</span>초
+        </span>
+      );
     }
     return (
       <div className="countdown">
-        동진 <span className="fontRed">♥</span> 인아의 결혼식이{" "}
-        <span className="fontRed">{timeText}</span> 남았습니다.
+        <div>
+          동진 <span className="fontRed">♥</span> 인아의 결혼식이
+        </div>
+        <div>{TimeText} 남았습니다.</div>
       </div>
     );
   }
@@ -94,8 +115,8 @@ const MyCal = () => {
 const DateBox = () => {
   return (
     <div className="date-box">
-      <div className="date-date">2025년 5월 24일</div>
-      <div className="date-time">토요일 낮 11시</div>
+      <img src={calFrame} alt="달력" />
+      <div className="cal-title">5월</div>
       <MyCal />
       <Countdown date={weddingDate} renderer={CountdownRenderer} />
     </div>

@@ -67,7 +67,6 @@ body {
   margin: 0;
   padding: 0;
   color: var(--fontBasic);
-  /* background: hsl(30, 30%, 90%); */
 }
 
 .hline {
@@ -76,16 +75,11 @@ body {
   border-top: 1pt dashed lightgray;
 }
 
-/* h2 {
-  font-size: 1em;
-  margin: 0 auto 6.5rem;
-  color: var(--fontLight);
-} */
-
 .container {
   max-width: 500px;
   margin: 0 auto;
   padding: 0;
+  background-color: #fcfaf5;
 }
 
 /* -------------------------------- */
@@ -311,13 +305,67 @@ body {
   /* background-color: hsl(30, 30%, 70%); */
 }
 
-/* ------------------- */
+/* ------------------------------- */
 
-.loca-box .loca-map {
-  background-color: red;
+.loca-box {
+  margin: 4rem auto 0;
+  padding: 0 0 2rem;
+}
+
+.loca-box .title {
+  margin: 3rem auto 3rem;
+  color: var(--fontGreen);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.loca-box .bttns {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+.loca-box .bttns button {
+  width: 40%;
+}
+
+.loca-box .howtoget .object {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 2rem 6% 0;
+}
+.loca-box .howtoget .object img {
+  width: 8%;
+  margin-right: 0.5rem;
+}
+.loca-box .howtoget .description {
+  text-align: left;
+  margin: 0 15%;
+}
+.loca-box .notice {
+  width: fit-content;
+  /* background-color: white; */
+  margin: 2rem auto 0;
+  /* padding: 1rem; */
+  font-weight: bold;
+  /* border: 1px solid var(--fontBasic); */
 }
 
 /* ------------ */
+
+.acc-box {
+  margin: 4rem auto 0;
+  padding: 0 0 2rem;
+}
+
+.acc-box .title {
+  margin: 3rem auto 3rem;
+  color: var(--fontGreen);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 
 .acc-box .acc-list {
   width: 90%;

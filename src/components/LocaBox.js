@@ -2,6 +2,8 @@ import CopyButton from "./CopyButton";
 import naverMap from "../icons/naver_map.png";
 import kakaoMap from "../icons/kakao_map.png";
 import tMap from "../icons/t_map.png";
+import bus from "../icons/bus.png";
+import car from "../icons/car.png";
 
 const LocaBox = () => {
   return (
@@ -65,6 +67,33 @@ const LocaBox = () => {
           <img src={tMap} alt="티맵" />
           티맵
         </button>
+      </div>
+      <div className="howtoget">
+        <div>
+          <div className="object">
+            <img src={bus} alt="대중교통" />
+            <div>대중교통</div>
+          </div>
+          <div className="description">
+            <p>지하철 2호선 낙성대역 4번출구 - 관악 02 버스 승차</p>
+            <p>서울대 후문·연구공원 정류장 하차 - 도보 5분</p>
+          </div>
+        </div>
+        <div>
+          <div className="object">
+            <img src={car} alt="주차안내" />
+            <div>주차안내</div>
+          </div>
+          <div className="description">
+            <p>웨딩홀 내 지하주차장이 마련되어 있습니다.</p>
+            <p>서울대 정문 및 후문 통과시 통행료가 부과되오니</p>
+            <p>후문 통과 전 좌회전하시기 바랍니다.</p>
+          </div>
+        </div>
+        <div className="notice">
+          <p>지하철역 및 학교 정문으로부터 거리가 머니</p>
+          <p>버스 또는 차량을 이용해주시기 바랍니다.</p>
+        </div>
       </div>
     </div>
   );

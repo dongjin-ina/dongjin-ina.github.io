@@ -56,6 +56,7 @@
 
 .compareDiv {
   position: absolute;
+  top: 0%;
 }
 .compareDiv img {
   width: 500px;
@@ -116,7 +117,7 @@ body {
 }
 .img-box .overlay-text img {
   position: absolute;
-  width: 50%;
+  width: 65%;
   top: 25%;
   left: 50%;
   transform: translate(-50%, 0);
@@ -192,17 +193,20 @@ body {
 }
 
 .invit-box .title,
-.loca-box .title {
+.loca-box .title,
+.acc-box .title {
   margin: 3rem auto 3rem;
   color: var(--fontGreen);
   font-weight: bold;
   font-size: 1.2rem;
 }
 
-.invit-box .invit-letter {
+.invit-box .invit-letter,
+.acc-box .acc-letter {
   margin: 0 auto 3rem;
 }
-.invit-box .invit-letter p {
+.invit-box .invit-letter p,
+.acc-box .acc-letter p {
   margin: 0 auto 0.5rem;
 }
 
@@ -252,10 +256,10 @@ body {
 }
 .date-box .cal table {
   position: absolute;
-  top: 20%;
+  top: 22%;
   left: 50%;
   width: 71%;
-  height: 36.4%;
+  height: 38.5%;
   transform: translate(-50%);
   border-collapse: collapse;
   font-size: 0.9rem;
@@ -288,99 +292,90 @@ body {
 /* ------------------------------- */
 
 .loca-box {
-  margin: 4rem auto 0;
+  margin: 7rem auto 0;
   padding: 0 0 2rem;
 }
+
+.loca-box .loca-address {
+  font-weight: bold;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+.loca-box .loca-address div {
+  margin-top: 0.5rem;
+}
+
 .loca-box .bttns {
   display: flex;
-  width: 80%;
-  margin: auto;
+  justify-content: space-between;
+  width: 75%;
+  margin: 2rem auto 0;
 }
 
 .loca-box .bttns button {
-  width: 40%;
+  /* width: 30%; */
+  width: fit-content;
+  height: 1.7rem;
+  font-size: 0.8rem;
+  background: none;
+  margin: 0 1%;
+  font-weight: bold;
+}
+.loca-box .bttns button img {
+  width: 1.3rem;
+  height: auto;
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+.loca-box .bttn-notice {
+  font-size: 0.8rem;
+  margin: 1rem auto 0;
 }
 
 .loca-box .howtoget .object {
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
-  margin: 2rem 6% 0;
+  margin: 2rem 4% 0;
 }
 .loca-box .howtoget .object img {
   width: 8%;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 .loca-box .howtoget .description {
+  font-size: 0.9rem;
   text-align: left;
-  margin: 0 15%;
+  margin: 0.5rem 0 0 15%;
+}
+.loca-box .howtoget .description p {
+  padding: 0;
+  margin: 0 0 0.4rem;
 }
 .loca-box .notice {
   width: fit-content;
-  /* background-color: white; */
   margin: 2rem auto 0;
-  /* padding: 1rem; */
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
   font-weight: bold;
-  /* border: 1px solid var(--fontBasic); */
+  border: 1pt solid hsl(0, 0%, 80%);
+}
+.loca-box .notice p {
+  margin: 0.5rem;
 }
 
 /* ------------ */
 
 .acc-box {
-  margin: 4rem auto 0;
+  margin: 0 auto 0;
   padding: 0 0 2rem;
 }
 
-.acc-box .title {
-  margin: 3rem auto 3rem;
-  color: var(--fontGreen);
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.acc-box .acc-list {
-  width: 90%;
-  /* width: fit-content; */
-  margin: 0 auto;
-}
-
 .acc-box .acc-bttn {
-  display: flex;
-  /* justify-content: center; */
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.acc-box .acc-bttn Button {
-  width: 16.7%;
-  font-size: 1em;
-  margin: 0;
-  border-radius: 0;
-  border-top-right-radius: 0.5em;
-  /* border: 1px solid hsl(30, 30%, 75%); */
-  /* background-color: hsl(30, 30%, 85%); */
-  /* color: black; */
-}
-.acc-box .acc-bttn Button.act {
-  /* background-color: hsl(30, 30%, 75%); */
-  font-size: 1.2em;
-  margin-top: -0.2em;
-  font-weight: bold;
-}
-.acc-box .acc-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 3em;
-  /* background-color: hsl(30, 30%, 75%); */
-}
-.acc-box .acc-info .bnk {
-  display: inline-block;
-  margin: 0 0.5em;
-}
-.acc-box .acc-info .num {
-  display: inline-block;
+  background-color: white;
+  border: 1px solid hsl(0, 0%, 60%);
+  padding: 0.5rem;
 }
 
 button {

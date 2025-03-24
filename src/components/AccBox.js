@@ -1,11 +1,14 @@
 import { useState } from "react";
 import CopyButton from "./CopyButton";
+import accImg from "../images/acc_img.jpg";
 
 const ShowAccBttn = ({ text, list }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <button onClick={() => setIsOpen((b) => !b)}>{text}</button>
+      <button className="acc-bttn" onClick={() => setIsOpen((b) => !b)}>
+        {text}
+      </button>
       {isOpen
         ? list.map((info, idx) => (
             <div key={`acc-${idx}`}>
@@ -23,9 +26,15 @@ const ShowAccBttn = ({ text, list }) => {
 const AccBox = () => {
   return (
     <div className="acc-box">
+      <img src={accImg} alt="" width="100%" />
       <div className="title">마음 전하실 곳</div>
+      <div className="acc-letter">
+        <p>참석이 어려우신 분들을 위해</p>
+        <p>계좌번호를 기재하였습니다.</p>
+        <p>너그러운 마음으로 양해 부탁드립니다.</p>
+      </div>
       <ShowAccBttn
-        text="신랑측 계좌 보기"
+        text="신랑측에게"
         list={[
           ["신동진", "우리", "978-045427-02-101"],
           ["신완기", "신한", "110-048-831781"],
@@ -33,7 +42,7 @@ const AccBox = () => {
         ]}
       />
       <ShowAccBttn
-        text="신부측 계좌 보기"
+        text="신부측에게"
         list={[
           ["최인아", "신한", "110-437-946984"],
           ["최삼태", "부산", "224-12-021215-4"],

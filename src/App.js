@@ -21,11 +21,7 @@ function App() {
 
       <DateBox />
 
-      <Hline />
-
       <LocaBox />
-
-      <Hline />
 
       <AccBox />
 

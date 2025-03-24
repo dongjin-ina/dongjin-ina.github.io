@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.951849f4.css",
-    "main.js": "/static/js/main.61a30839.js",
+    "main.js": "/static/js/main.40c0012d.js",
     "static/js/453.4e7b410a.chunk.js": "/static/js/453.4e7b410a.chunk.js",
     "static/media/comparison.jpg": "/static/media/comparison.d23e82dfda4288286431.jpg",
     "static/media/NanumBarunpenB.otf": "/static/media/NanumBarunpenB.f4ab6ed02776644d3bab.otf",
@@ -19,11 +19,11 @@
     "static/media/naver_map.png": "/static/media/naver_map.9099fe51a7d32c68de0d.png",
     "index.html": "/index.html",
     "main.951849f4.css.map": "/static/css/main.951849f4.css.map",
-    "main.61a30839.js.map": "/static/js/main.61a30839.js.map",
+    "main.40c0012d.js.map": "/static/js/main.40c0012d.js.map",
     "453.4e7b410a.chunk.js.map": "/static/js/453.4e7b410a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.951849f4.css",
-    "static/js/main.61a30839.js"
+    "static/js/main.40c0012d.js"
   ]
 }

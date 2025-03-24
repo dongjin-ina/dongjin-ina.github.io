@@ -45,7 +45,7 @@
   --fontRed: #a61f24;
   --backBasic: #f6f7f3;
   --backGreen: #cbdb3b;
-  font-size: 4%;
+  font-size: 4vw;
 }
 
 @media (min-width: 500px) {
@@ -372,10 +372,25 @@ body {
   padding: 0 0 2rem;
 }
 
+.acc-box .acc-bttns {
+  margin: -1rem 0;
+}
+
 .acc-box .acc-bttn {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 0.8rem;
   background-color: white;
   border: 1px solid hsl(0, 0%, 60%);
-  padding: 0.5rem;
+  padding: 1rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  width: 60%;
+}
+
+.acc-box .acc-bttn img {
+  width: 1.2rem;
+  height: auto;
 }
 
 button {

@@ -8,9 +8,9 @@ import compareImg from "./images/comparison.jpg";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <div className="compareDiv">
+    <div className="compareDiv">
       <img src={compareImg} alt="" />
-    </div> */}
+    </div>
 
     <App />
   </React.StrictMode>

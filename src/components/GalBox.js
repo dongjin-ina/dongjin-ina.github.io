@@ -1,5 +1,7 @@
 const importAll = (r) => r.keys().map(r);
-const galImgs = importAll(require.context("../images", false, /gal\d+\.jpg$/));
+const galImgs = importAll(
+  require.context("../images", false, /galThumb\d+\.jpg$/)
+);
 
 const GalImg = ({ galSrc }) => {
   return (
@@ -15,7 +17,7 @@ const GalBox = () => {
       <div className="title">아이콘 필요</div>
       <div className="gal-grid">
         {galImgs.map((src, index) => (
-          <GalImg key={`gal-${index}`} galSrc={src} />
+          <img key={`gal-${index}`} src={src} />
         ))}
       </div>
     </div>

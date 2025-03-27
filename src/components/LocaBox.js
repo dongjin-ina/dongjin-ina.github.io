@@ -6,6 +6,32 @@ import bus from "../icons/bus.png";
 import car from "../icons/car.png";
 import mapImg from "../icons/map.png";
 
+const LocaButton = ({ text, icoSrc, link1, link2 }) => {
+  return (
+    <button
+      onClick={() => {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (isMobile) {
+          // 앱으로 열기 시도
+          window.location.href = link1;
+
+          // 앱이 없을 경우 웹으로 연결
+          setTimeout(() => {
+            window.location.href = link2;
+          }, 800);
+        } else {
+          // 데스크탑에서는 바로 웹으로 열기
+          window.open(link2, "_blank", "noopener,noreferrer");
+        }
+      }}
+    >
+      <img src={icoSrc} alt="" />
+      {text}
+    </button>
+  );
+};
+
 const LocaBox = () => {
   return (
     <div className="loca-box">
@@ -20,54 +46,24 @@ const LocaBox = () => {
       </div>
       <img width="90%" src={mapImg} alt="지도" />
       <div className="bttns">
-        <button
-          onClick={() => {
-            window.location.href =
-              "naversearchapp://mapsearch?query=서울대학교 연구공원 웨딩홀";
-            setTimeout(() => {
-              window.open(
-                "https://map.naver.com/v5/search/서울대학교%20연구공원%20웨딩홀",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }, 500);
-          }}
-        >
-          <img src={naverMap} alt="네이버지도" />
-          네이버지도
-        </button>
-        <button
-          onClick={() => {
-            window.location.href =
-              "kakaonavi://search?q=서울대학교 연구공원 웨딩홀";
-            setTimeout(() => {
-              window.open(
-                "https://map.kakao.com/?q=서울대학교 연구공원 웨딩홀",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }, 500);
-          }}
-        >
-          <img src={kakaoMap} alt="카카오지도" />
-          카카오지도
-        </button>
-        <button
-          onClick={() => {
-            window.location.href =
-              "tmap://search?name=서울대학교 연구공원 웨딩홀";
-            setTimeout(() => {
-              window.open(
-                "https://map.kakao.com/?q=서울대학교 연구공원 웨딩홀",
-                "_blank",
-                "noopener,noreferrer"
-              );
-            }, 500);
-          }}
-        >
-          <img src={tMap} alt="티맵" />
-          티맵
-        </button>
+        <LocaButton
+          text="네이버지도"
+          icoSrc={naverMap}
+          link1="nmap://search?query=서울대학교 연구공원 웨딩홀"
+          link2="https://map.naver.com/v5/search/서울대학교%20연구공원%20웨딩홀"
+        />
+        <LocaButton
+          text="카카오네비"
+          icoSrc={kakaoMap}
+          link1="kakaonavi://search?q=서울대학교 연구공원 웨딩홀"
+          link2="https://map.kakao.com/?q=서울대학교 연구공원 웨딩홀"
+        />
+        <LocaButton
+          text="티맵"
+          icoSrc={tMap}
+          link1="tmap://search?name=서울대학교 연구공원 웨딩홀"
+          link2="https://www.google.com/search?q=서울대학교+연구공원+웨딩홀"
+        />
       </div>
       <div className="bttn-notice">
         위 아이콘을 누르시면 길 안내가 시작됩니다.

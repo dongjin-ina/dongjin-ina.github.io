@@ -438,20 +438,32 @@ body {
   grid-template-rows: repeat(4, auto);
 }
 
-.gal-box .gal-grid .gal-img {
-  position: relative;
-  padding-top: 133.33%;
-  overflow: hidden;
+.gal-box .gal-grid img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
 }
 
-.gal-box .gal-grid .gal-img img {
+/* ----------------------- */
+.thanks-box {
+  position: relative;
+}
+
+.thanks-box .title-text {
   position: absolute;
-  top: 50%;
+  bottom: 6%;
   left: 50%;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%);
+  white-space: nowrap;
+}
+
+.thanks-box .title-text .thanks {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.thanks-box .title-text .dongjin-ina {
+  font-size: 0.9rem;
 }
 
 /* ----------------------- */

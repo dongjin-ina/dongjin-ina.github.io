@@ -1,26 +1,20 @@
+import RevealOnce from "./RevealOnce";
+
 const importAll = (r) => r.keys().map(r);
 const galImgs = importAll(
   require.context("../images", false, /galThumb\d+\.jpg$/)
 );
 
-const GalImg = ({ galSrc }) => {
-  return (
-    <div className="gal-img">
-      <img src={galSrc} alt="" />
-    </div>
-  );
-};
-
 const GalBox = () => {
   return (
-    <div className="gal-box">
+    <RevealOnce className="gal-box">
       <div className="title">아이콘 필요</div>
       <div className="gal-grid">
         {galImgs.map((src, index) => (
-          <img key={`gal-${index}`} src={src} />
+          <img key={`gal-${index}`} src={src} alt="" />
         ))}
       </div>
-    </div>
+    </RevealOnce>
   );
 };
 export default GalBox;

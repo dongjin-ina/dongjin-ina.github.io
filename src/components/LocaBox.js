@@ -1,10 +1,11 @@
-import CopyButton from "./CopyButton";
+// import CopyButton from "./CopyButton";
 import naverMap from "../icons/naver_map.png";
 import kakaoMap from "../icons/kakao_map.png";
 import tMap from "../icons/t_map.png";
 import bus from "../icons/bus.png";
 import car from "../icons/car.png";
 import mapImg from "../icons/map.png";
+import RevealOnce from "./RevealOnce";
 
 const LocaButton = ({ text, icoSrc, link1, link2 }) => {
   return (
@@ -34,7 +35,7 @@ const LocaButton = ({ text, icoSrc, link1, link2 }) => {
 
 const LocaBox = () => {
   return (
-    <div className="loca-box">
+    <RevealOnce className="loca-box">
       <div className="title">오시는 길</div>
       <div className="loca-address">
         <div>서울 관악구 관악로 1</div>
@@ -97,7 +98,7 @@ const LocaBox = () => {
           <p>버스 또는 차량을 이용해주시기 바랍니다.</p>
         </div>
       </div>
-    </div>
+    </RevealOnce>
   );
 };
 

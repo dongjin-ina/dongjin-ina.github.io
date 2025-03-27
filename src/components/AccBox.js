@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import CopyButton from "./CopyButton";
 import accImg from "../images/acc_img.jpg";
 import openIco from "../icons/open.png";
+import RevealOnce from "./RevealOnce";
 
 const ShowAccBttn = ({ text, list }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,7 +67,7 @@ const ShowAccBttn = ({ text, list }) => {
 
 const AccBox = () => {
   return (
-    <div className="acc-box">
+    <RevealOnce className="acc-box">
       <img src={accImg} alt="" width="100%" />
       <div className="title">마음 전하실 곳</div>
       <div className="acc-letter">
@@ -92,7 +93,7 @@ const AccBox = () => {
           ]}
         />
       </div>
-    </div>
+    </RevealOnce>
   );
 };
 

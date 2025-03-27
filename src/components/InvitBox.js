@@ -1,8 +1,9 @@
 import invitBirds from "../icons/invit_birds.png";
+import RevealOnce from "./RevealOnce";
 
 const InvitBox = () => {
   return (
-    <div className="invit-box">
+    <RevealOnce className="invit-box">
       <img src={invitBirds} alt="초대합니다." />
       <div className="title">소중한 분들을 초대합니다</div>
       <div className="invit-letter">
@@ -20,7 +21,7 @@ const InvitBox = () => {
         <div>의 장녀</div>
         <div>인아</div>
       </div>
-    </div>
+    </RevealOnce>
   );
 };
 

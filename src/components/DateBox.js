@@ -1,5 +1,6 @@
 import Countdown from "react-countdown";
 import calFrame from "../icons/cal_frame.png";
+import RevealOnce from "./RevealOnce";
 
 const weddingDate = new Date("2025-05-24T11:00:00");
 
@@ -114,12 +115,12 @@ const MyCal = () => {
 
 const DateBox = () => {
   return (
-    <div className="date-box">
+    <RevealOnce className="date-box">
       <img src={calFrame} alt="달력" />
       <div className="cal-title">5월</div>
       <MyCal />
       <Countdown date={weddingDate} renderer={CountdownRenderer} />
-    </div>
+    </RevealOnce>
   );
 };
 

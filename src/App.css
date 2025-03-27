@@ -194,7 +194,8 @@ body {
 
 .invit-box .title,
 .loca-box .title,
-.acc-box .title {
+.acc-box .title,
+.gal-box .title {
   margin: 3rem auto 3rem;
   color: var(--fontGreen);
   font-weight: bold;
@@ -338,16 +339,16 @@ body {
   align-items: center;
   font-size: 1rem;
   font-weight: bold;
-  margin: 2rem 4% 0;
+  margin: 2rem 1rem 0;
 }
 .loca-box .howtoget .object img {
-  width: 8%;
+  width: 1.3rem;
   margin-right: 1rem;
 }
 .loca-box .howtoget .description {
   font-size: 0.9rem;
   text-align: left;
-  margin: 0.5rem 0 0 15%;
+  margin: 0.5rem 0 0 3.3rem;
 }
 .loca-box .howtoget .description p {
   padding: 0;
@@ -379,12 +380,13 @@ body {
 .acc-box .acc-bttn {
   display: flex;
   justify-content: space-between;
-  margin: 0 auto 0.8rem;
+  margin: 0 auto 0;
   background-color: white;
   border: 1px solid hsl(0, 0%, 60%);
   padding: 1rem 0.6rem;
   font-size: 0.85rem;
   font-weight: bold;
+  border-radius: 0.5rem;
   width: 60%;
 }
 
@@ -392,6 +394,67 @@ body {
   width: 1.2rem;
   height: auto;
 }
+
+.acc-box .acc-drawer {
+  width: 60%;
+  margin: 0 auto 0.5rem;
+  background-color: hsl(0, 0%, 80%);
+}
+
+.acc-box .acc-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.2rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  background-color: hsl(0, 0%, 90%);
+}
+
+.acc-box .acc-info div {
+  font-size: 0.8rem;
+  text-align: left;
+}
+.acc-box .acc-info .acc-who {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+.acc-box .acc-info button {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* ----------------------- */
+
+.gal-box {
+  margin: 0 auto 0;
+  padding: 0 0 2rem;
+}
+
+.gal-box .gal-grid {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(3, 32%);
+  grid-template-rows: repeat(4, auto);
+}
+
+.gal-box .gal-grid .gal-img {
+  position: relative;
+  padding-top: 133.33%;
+  overflow: hidden;
+}
+
+.gal-box .gal-grid .gal-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+/* ----------------------- */
 
 button {
   display: inline-flex;

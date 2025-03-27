@@ -1,26 +1,65 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CopyButton from "./CopyButton";
 import accImg from "../images/acc_img.jpg";
 import openIco from "../icons/open.png";
 
 const ShowAccBttn = ({ text, list }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [maxHeight, setMaxHeight] = useState("0px");
+  const contentRef = useRef(null);
+
+  const toggleDrawer = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    if (contentRef.current) {
+      if (isOpen) {
+        setMaxHeight(`${contentRef.current.scrollHeight}px`);
+      } else {
+        setMaxHeight("0px");
+      }
+    }
+  }, [isOpen]);
+
   return (
     <div>
-      <button className="acc-bttn" onClick={() => setIsOpen((b) => !b)}>
+      <button className="acc-bttn" onClick={toggleDrawer}>
         <div>{text}</div>
-        <img src={openIco} alt="" />
+        <img
+          src={openIco}
+          alt=""
+          style={{
+            transform: isOpen ? "rotate(-180deg)" : "rotate(0deg)",
+            transition: "transform 0.5s ease",
+          }}
+        />
       </button>
-      {isOpen
-        ? list.map((info, idx) => (
-            <div key={`acc-${idx}`}>
-              <div>{info[0]}</div>
-              <div>{info[1]}</div>
-              <div>{info[2]}</div>
-              <CopyButton text={info[2]} almsg="계좌번호가 복사되었습니다." />
+
+      <div
+        ref={contentRef}
+        className="acc-drawer"
+        style={{
+          maxHeight: maxHeight,
+          transition: "max-height 0.5s ease",
+          overflow: "hidden",
+        }}
+      >
+        {list.map((info, idx) => (
+          <div key={`acc-${idx}`} className="acc-info">
+            <div>
+              <div className="acc-who">{info[0]}</div>
+              <div>
+                {info[1]} {info[2]}
+              </div>
             </div>
-          ))
-        : null}
+            <CopyButton
+              text={`${info[1]} ${info[2]}`}
+              almsg="계좌번호가 복사되었습니다."
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

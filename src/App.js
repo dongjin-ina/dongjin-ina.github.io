@@ -7,30 +7,23 @@ import LocaBox from "./components/LocaBox";
 import AccBox from "./components/AccBox";
 import Hline from "./components/Hline";
 import "./App.css";
+import GalBox from "./components/GalBox";
+import ThanksBox from "./components/ThanksBox";
+import FinalBox from "./components/FinalBox";
 
 function App() {
   return (
     <div className="container">
       <ImgBox />
-
       <StampBox />
-
       <InvitBox />
-
       <Hline />
-
       <DateBox />
-
       <LocaBox />
-
       <AccBox />
-
-      <div className="hline" />
-
-      <div className="gal-box">
-        <h2>동진 &amp; 인아</h2>
-        <p>사진 넣을 곳</p>
-      </div>
+      <GalBox />
+      <ThanksBox />
+      <FinalBox />
     </div>
   );
 }

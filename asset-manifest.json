@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.661222eb.css",
-    "main.js": "/static/js/main.95f4492a.js",
+    "main.css": "/static/css/main.2bb6ad3c.css",
+    "main.js": "/static/js/main.5e2c057f.js",
     "static/js/453.4e7b410a.chunk.js": "/static/js/453.4e7b410a.chunk.js",
     "static/media/comparison.jpg": "/static/media/comparison.d23e82dfda4288286431.jpg",
     "static/media/NanumBarunpenB.otf": "/static/media/NanumBarunpenB.f4ab6ed02776644d3bab.otf",
@@ -31,12 +31,12 @@
     "static/media/t_map.png": "/static/media/t_map.10fdb42b2adc37f1796b.png",
     "static/media/naver_map.png": "/static/media/naver_map.9099fe51a7d32c68de0d.png",
     "index.html": "/index.html",
-    "main.661222eb.css.map": "/static/css/main.661222eb.css.map",
-    "main.95f4492a.js.map": "/static/js/main.95f4492a.js.map",
+    "main.2bb6ad3c.css.map": "/static/css/main.2bb6ad3c.css.map",
+    "main.5e2c057f.js.map": "/static/js/main.5e2c057f.js.map",
     "453.4e7b410a.chunk.js.map": "/static/js/453.4e7b410a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.661222eb.css",
-    "static/js/main.95f4492a.js"
+    "static/css/main.2bb6ad3c.css",
+    "static/js/main.5e2c057f.js"
   ]
 }

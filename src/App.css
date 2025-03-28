@@ -198,8 +198,7 @@ body {
 
 .invit-box .title,
 .loca-box .title,
-.acc-box .title,
-.gal-box .title {
+.acc-box .title {
   margin: 3rem auto 3rem;
   color: var(--fontGreen);
   font-weight: bold;
@@ -433,6 +432,22 @@ body {
 .gal-box {
   margin: 0 auto 0;
   padding: 0 0 2rem;
+}
+
+.gal-box .photo-title {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  height: 6rem;
+}
+
+.gal-box .photo-title .photo-dung {
+  position: absolute;
+  width: 3.2rem;
+}
+.gal-box .photo-title .photo-bbeum {
+  position: absolute;
+  width: 3.3rem;
+  transform: translate(1rem);
 }
 
 .gal-box .gal-grid {

@@ -68,7 +68,7 @@ const GalBox = () => {
           src={dung === 1 ? photoDung1 : dung === 2 ? photoDung2 : photoDung3}
           alt=""
           style={{
-            transform: ` translate(-3rem, 2rem) translate(${
+            transform: ` translate(-5rem, 2rem) translate(${
               0.5 * dungPos
             }rem) scale(${dung === 3 ? dungDir : 1},1)`,
           }}

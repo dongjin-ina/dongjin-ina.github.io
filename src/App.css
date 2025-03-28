@@ -437,7 +437,7 @@ body {
 .gal-box .photo-title {
   margin-top: 3rem;
   margin-bottom: 1rem;
-  height: 8rem;
+  height: 9rem;
 }
 
 .gal-box .photo-title .photo-dung {
@@ -447,7 +447,6 @@ body {
 .gal-box .photo-title .photo-bbeum {
   position: absolute;
   width: 5rem;
-  transform: translate(1rem);
 }
 
 .gal-box .gal-grid {

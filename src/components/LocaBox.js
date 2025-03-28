@@ -2,10 +2,26 @@
 import naverMap from "../icons/naver_map.png";
 import kakaoMap from "../icons/kakao_map.png";
 import tMap from "../icons/t_map.png";
-import bus from "../icons/bus.png";
+import bus from "../icons/bus.svg";
 import car from "../icons/car.png";
-import mapImg from "../icons/map.png";
 import RevealOnce from "./RevealOnce";
+import mapBack from "../icons/map_back.png";
+import mapSubway from "../icons/map_subway.png";
+
+const LocaMap = () => {
+  return (
+    <div className="loca-map">
+      <img
+        src={mapBack}
+        alt=""
+        style={{
+          width: "20rem",
+        }}
+      />
+      <img src={mapSubway} alt="" style={{ scale: "0.6" }} />
+    </div>
+  );
+};
 
 const LocaButton = ({ text, icoSrc, link1, link2 }) => {
   return (
@@ -45,7 +61,8 @@ const LocaBox = () => {
           almsg="결혼식장 주소가 복사되었습니다."
         /> */}
       </div>
-      <img width="90%" src={mapImg} alt="지도" />
+      <LocaMap />
+      {/* <img width="90%" src={mapImg} alt="지도" /> */}
       <div className="bttns">
         <LocaButton
           text="네이버지도"

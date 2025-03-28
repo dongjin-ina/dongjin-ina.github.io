@@ -59,9 +59,6 @@ const GalBox = () => {
 
   return (
     <RevealOnce className="gal-box">
-      <div>
-        {dung}, {dungPos}
-      </div>
       <div className="photo-title">
         <img
           className="photo-dung"
@@ -77,6 +74,7 @@ const GalBox = () => {
           className="photo-bbeum"
           src={dung === 3 ? photoBbeum1 : photoBbeum2}
           alt=""
+          style={{ transform: "translate(1rem)" }}
         />
       </div>
       <div className="gal-grid">

@@ -29,6 +29,8 @@ const FinalBox = () => {
         description: "25년 5월 24일 11시 | 서울대 연구공원 웨딩홀",
         imageUrl:
           "https://raw.githubusercontent.com/dongjin-ina/dongjin-ina.github.io/main/src/images/thumb_3x4.png",
+        imageWidth: 1200, // 추가
+        imageHeight: 1600,
         link: {
           mobileWebUrl: "https://dongjin-ina.github.io/",
           webUrl: "https://dongjin-ina.github.io/",

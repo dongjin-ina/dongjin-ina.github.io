@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import RevealOnce from "./RevealOnce";
 import photoBbeum1 from "../icons/photo_bbeum_1.png";
 import photoBbeum2 from "../icons/photo_bbeum_2.png";
@@ -16,18 +16,45 @@ const GalBox = () => {
   const [isFlashing, setIsFlashing] = useState(true);
   const [dungPos, setDungPos] = useState(0);
   const [dungDir, setDungDir] = useState(-1);
-  const [dungRot, setDungRot] = useState(0);
   const [dung, setDung] = useState(1);
-
   const [imgNum, setImgNum] = useState(-1);
+  const [imgPos, setImgPos] = useState(0);
+  const touchStartX = useRef(null);
 
   const setNum = (i) => () => setImgNum(i);
   const delNum = () => setImgNum(-1);
-  const nextNum = () => {
-    imgNum + 1 === galImgs.length ? setImgNum(0) : setImgNum((i) => i + 1);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
   };
-  const prevNum = () => {
-    imgNum === 0 ? setImgNum(galImgs.length - 1) : setImgNum((i) => i - 1);
+
+  const handleTouchMove = (e) => {
+    if (touchStartX.current === null) return;
+    const touchMoveX = e.touches[0].clientX;
+    const diffX = touchMoveX - touchStartX.current;
+    setImgPos(diffX);
+  };
+
+  const handleTouchEnd = () => {
+    if (imgPos > 100) {
+      showPreviousImage();
+    } else if (imgPos < -100) {
+      showNextImage();
+    }
+    setImgPos(0);
+    touchStartX.current = null;
+  };
+
+  const showPreviousImage = () => {
+    setImgNum((prevIndex) =>
+      prevIndex === 0 ? galImgs.length - 1 : prevIndex - 1
+    );
+  };
+
+  const showNextImage = () => {
+    setImgNum((prevIndex) =>
+      prevIndex === galImgs.length - 1 ? 0 : prevIndex + 1
+    );
   };
 
   useEffect(() => {
@@ -65,7 +92,7 @@ const GalBox = () => {
           src={dung === 1 ? photoDung1 : dung === 2 ? photoDung2 : photoDung3}
           alt=""
           style={{
-            transform: ` translate(-5rem, 2rem) translate(${
+            transform: ` translate(-5.5rem, 2rem) translate(${
               0.5 * dungPos
             }rem) scale(${dung === 3 ? dungDir : 1},1)`,
           }}
@@ -83,11 +110,43 @@ const GalBox = () => {
         ))}
       </div>
       {imgNum < 0 ? null : (
-        <div className="gal-img">
-          <div className="close" onClick={delNum} style={{ color: "white" }}>
-            X자 그림 필요
+        // <div className="gal-img">
+        //   <div className="close" onClick={delNum} style={{ color: "white" }}>
+        //     X자 그림 필요
+        //   </div>
+        //   <img src={galImgs[imgNum]} alt="" style={{ width: "100%" }} />
+        // </div>
+        <div
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          className="gal-img"
+        >
+          <div onClick={delNum}>x</div>
+          <div
+            className="flex"
+            style={{
+              transform: `translateX(calc(-100% + ${imgPos}px))`,
+              transition: imgPos === 0 ? "transform 0.3s ease" : "none",
+              width: "300%",
+            }}
+          >
+            <img
+              src={galImgs[(imgNum - 1 + galImgs.length) % galImgs.length]}
+              alt="Previous Image"
+              className="w-screen h-auto object-contain"
+            />
+            <img
+              src={galImgs[imgNum]}
+              alt="Current Image"
+              className="w-screen h-auto object-contain"
+            />
+            <img
+              src={galImgs[(imgNum + 1) % galImgs.length]}
+              alt="Next Image"
+              className="w-screen h-auto object-contain"
+            />
           </div>
-          <img src={galImgs[imgNum]} alt="" style={{ width: "100%" }} />
         </div>
       )}
     </RevealOnce>

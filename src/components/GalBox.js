@@ -124,28 +124,18 @@ const GalBox = () => {
         >
           <div onClick={delNum}>x</div>
           <div
-            className="flex"
+            className="gal-img-inner"
             style={{
-              transform: `translateX(calc(-100% + ${imgPos}px))`,
+              transform: `translateX(calc(0% + ${imgPos}px))`,
               transition: imgPos === 0 ? "transform 0.3s ease" : "none",
-              width: "300%",
             }}
           >
             <img
               src={galImgs[(imgNum - 1 + galImgs.length) % galImgs.length]}
-              alt="Previous Image"
-              className="w-screen h-auto object-contain"
+              alt=""
             />
-            <img
-              src={galImgs[imgNum]}
-              alt="Current Image"
-              className="w-screen h-auto object-contain"
-            />
-            <img
-              src={galImgs[(imgNum + 1) % galImgs.length]}
-              alt="Next Image"
-              className="w-screen h-auto object-contain"
-            />
+            <img src={galImgs[imgNum]} alt="" />
+            <img src={galImgs[(imgNum + 1) % galImgs.length]} alt="" />
           </div>
         </div>
       )}

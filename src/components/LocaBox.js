@@ -18,7 +18,7 @@ const LocaMap = () => {
           width: "20rem",
         }}
       />
-      <img src={mapSubway} alt="" style={{ scale: "0.6" }} />
+      <img src={mapSubway} alt="" style={{ width: "4rem" }} />
     </div>
   );
 };

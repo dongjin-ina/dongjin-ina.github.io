@@ -39,10 +39,11 @@
 :root {
   --fontBasic: #292d2d;
   --fontBlue: #5395c7;
-  --fontGreen: #74bb35;
+  --fontGreen: #5395c7;
+  /* --fontGreen: #74bb35; */
   --fontOrange: #ef846b;
   --fontLight: #898158;
-  --fontRed: #a61f24;
+  --fontRed: #ea826e;
   --backBasic: #f6f7f3;
   --backGreen: #cbdb3b;
   font-size: 4vw;
@@ -244,53 +245,46 @@ body {
   margin: 3rem 0;
 }
 
-.date-box img {
-  width: 91%;
+.date-box .cal-title {
+  width: 20rem;
 }
 
-.date-box .cal-title {
+.date-box .cal-nyang {
   position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%);
-  font-weight: bold;
+  width: 18.7rem;
+  left: 3.4rem;
+  top: 15rem;
+  z-index: 1;
 }
-.date-box .cal thead td {
-  padding-bottom: 1rem;
+
+.date-box .cal {
+  display: grid;
+  position: relative;
+  width: 20rem;
+  margin: 3rem auto 11rem;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(7, 2rem);
+  grid-template-rows: repeat(6, 2.2rem);
+  z-index: 900;
 }
-.date-box .cal table {
-  position: absolute;
-  top: 22%;
-  left: 50%;
-  width: 71%;
-  height: 38.5%;
-  transform: translate(-50%);
-  border-collapse: collapse;
-  font-size: 0.9rem;
-}
-.date-box .cal td:first-child {
-  color: var(--fontRed);
+
+.date-box .cal div {
+  font-size: 1.2rem;
+  font-family: "GangwonEduSaeeum", sans-serif;
 }
 .date-box .cal .wedding-date {
   color: white;
 }
 
-.date-box .date-date {
-  font-weight: bold;
-  font-size: 1.3rem;
-  margin: -1rem 0 0;
+.date-box .countdown,
+.date-box .countdown span {
+  font-family: "GangwonEduSaeeum", sans-serif;
 }
-.date-box .date-time {
-  font-size: 1.1rem;
-  margin: 0.5rem 0 2rem;
-  color: var(--fontLight);
-}
-
 .date-box .countdown {
-  position: absolute;
-  top: 83%;
-  left: 50%;
-  transform: translate(-50%);
+  font-size: 1.2rem;
+}
+.date-box .countdown .fontEmp {
+  font-size: 1.5rem;
 }
 
 /* ------------------------------- */

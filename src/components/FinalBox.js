@@ -28,7 +28,7 @@ const FinalBox = () => {
         title: "동진♡인아 결혼합니다.",
         description: "25년 5월 24일 11시 | 서울대 연구공원 웨딩홀",
         imageUrl:
-          "https://raw.githubusercontent.com/dongjin-ina/dongjin-ina.github.io/main/src/images/thumb.jpg",
+          "https://raw.githubusercontent.com/dongjin-ina/dongjin-ina.github.io/main/src/images/thumb_3x4.jpg",
         link: {
           mobileWebUrl: "https://dongjin-ina.github.io/",
           webUrl: "https://dongjin-ina.github.io/",

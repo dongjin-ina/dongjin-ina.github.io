@@ -460,18 +460,16 @@ body {
   position: fixed;
   top: 0;
   width: 25rem;
-  height: 75rem;
+  height: 100vh;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.7);
 }
 .gal-box .gal-img-inner {
   display: flex;
-  position: fixed;
-  width: 60rem;
-  border: 1pt solid red;
 }
 
 .gal-box .gal-img-inner img {
-  width: 20rem;
+  width: 25rem;
   height: auto;
   object-fit: contain;
 }

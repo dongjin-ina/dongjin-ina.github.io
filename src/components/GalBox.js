@@ -122,11 +122,13 @@ const GalBox = () => {
           onTouchEnd={handleTouchEnd}
           className="gal-img"
         >
-          <div onClick={delNum}>x</div>
+          <div className="fontRed" onClick={delNum}>
+            x{imgPos}
+          </div>
           <div
             className="gal-img-inner"
             style={{
-              transform: `translateX(calc(0% + ${imgPos}px))`,
+              transform: `translateX(calc(-25rem + ${imgPos}px))`,
               transition: imgPos === 0 ? "transform 0.3s ease" : "none",
             }}
           >

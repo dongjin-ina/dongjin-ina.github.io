@@ -41,20 +41,27 @@ const GalBox = () => {
     } else if (imgPos < -100) {
       showNextImage();
     }
-    setImgPos(0);
     touchStartX.current = null;
   };
 
   const showPreviousImage = () => {
-    setImgNum((prevIndex) =>
-      prevIndex === 0 ? galImgs.length - 1 : prevIndex - 1
-    );
+    setImgPos("prev");
+    setTimeout(() => {
+      setImgNum((prevIndex) =>
+        prevIndex === 0 ? galImgs.length - 1 : prevIndex - 1
+      );
+      setImgPos(0);
+    }, 300); // 0.3초 후에 실행
   };
 
   const showNextImage = () => {
-    setImgNum((prevIndex) =>
-      prevIndex === galImgs.length - 1 ? 0 : prevIndex + 1
-    );
+    setImgPos("prev");
+    setTimeout(() => {
+      setImgNum((prevIndex) =>
+        prevIndex === galImgs.length - 1 ? 0 : prevIndex + 1
+      );
+      setImgPos(0);
+    }, 300); // 0.3초 후에 실행
   };
 
   useEffect(() => {
@@ -110,12 +117,6 @@ const GalBox = () => {
         ))}
       </div>
       {imgNum < 0 ? null : (
-        // <div className="gal-img">
-        //   <div className="close" onClick={delNum} style={{ color: "white" }}>
-        //     X자 그림 필요
-        //   </div>
-        //   <img src={galImgs[imgNum]} alt="" style={{ width: "100%" }} />
-        // </div>
         <div
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -128,7 +129,13 @@ const GalBox = () => {
           <div
             className="gal-img-inner"
             style={{
-              transform: `translateX(calc(-25rem + ${imgPos}px))`,
+              transform: `translateX(calc(-25rem + ${
+                imgPos === "prev"
+                  ? "25rem"
+                  : imgPos === "next"
+                  ? "-25rem"
+                  : `${imgPos}px`
+              }))`,
               transition: imgPos === 0 ? "transform 0.3s ease" : "none",
             }}
           >

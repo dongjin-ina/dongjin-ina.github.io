@@ -316,8 +316,8 @@ body {
 .loca-box .bttns {
   display: flex;
   justify-content: space-between;
-  width: 75%;
-  margin: 0.5rem auto 0;
+  width: 19.5rem;
+  margin: 1rem auto 0;
 }
 
 .loca-box .bttns button {
@@ -338,7 +338,7 @@ body {
 
 .loca-box .bttn-notice {
   font-size: 0.8rem;
-  margin: 0.5rem auto 2rem;
+  margin: 1rem auto 3rem;
 }
 
 .loca-box .howtoget .object {

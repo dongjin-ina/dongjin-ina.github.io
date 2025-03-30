@@ -5,20 +5,22 @@ import tMap from "../icons/t_map.png";
 import bus from "../icons/bus.svg";
 import car from "../icons/car.png";
 import RevealOnce from "./RevealOnce";
+import mapImg from "../icons/map.png";
 import mapBack from "../icons/map_back.png";
 import mapSubway from "../icons/map_subway.png";
 
 const LocaMap = () => {
   return (
     <div className="loca-map">
-      <img
+      <img src={mapImg} alt="" style={{ width: "20rem" }} />
+      {/* <img
         src={mapBack}
         alt=""
         style={{
           width: "20rem",
         }}
       />
-      <img src={mapSubway} alt="" style={{ width: "4rem" }} />
+      <img src={mapSubway} alt="" style={{ width: "4rem" }} /> */}
     </div>
   );
 };

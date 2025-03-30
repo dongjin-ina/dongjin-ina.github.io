@@ -140,8 +140,8 @@ const GalBox = () => {
           </button>
           <div
             className="gal-img-inner"
-            onMouseDown={handleMouseDown}
-            onTouchStart={handleMouseDown}
+            onMouseDown={handleMouseDown(true)}
+            onTouchStart={handleMouseDown(false)}
             style={{
               transform: `translateX(-25rem) translateX(${imgPos})`,
               transition: imgMotion ? "transform 0.3s ease" : null,

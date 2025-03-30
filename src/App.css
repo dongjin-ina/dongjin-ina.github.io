@@ -39,8 +39,7 @@
 :root {
   --fontBasic: #292d2d;
   --fontBlue: #5395c7;
-  --fontGreen: #5395c7;
-  /* --fontGreen: #74bb35; */
+  --fontGreen: #74bb35;
   --fontOrange: #ef846b;
   --fontLight: #898158;
   --fontRed: #ea826e;
@@ -202,7 +201,7 @@ body {
 .loca-box .title,
 .acc-box .title {
   margin: 3rem auto 3rem;
-  color: var(--fontGreen);
+  color: var(--fontBlue);
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -254,7 +253,7 @@ body {
   position: absolute;
   width: 18.7rem;
   left: 3.4rem;
-  top: 15rem;
+  top: 15.2rem;
   z-index: 1;
 }
 

@@ -37,7 +37,7 @@
 }
 
 :root {
-  --fontBasic: #292d2d;
+  --fontBasic: #181818;
   --fontBlue: #5395c7;
   --fontGreen: #74bb35;
   --fontOrange: #ef846b;
@@ -509,6 +509,7 @@ button {
   height: 1.6rem;
   cursor: pointer;
   border-radius: 5px;
+  color: var(--fontBasic);
 }
 
 button div {

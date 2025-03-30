@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import RevealOnce from "./RevealOnce";
 import photoBbeum1 from "../icons/photo_bbeum_1.png";
 import photoBbeum2 from "../icons/photo_bbeum_2.png";
@@ -18,51 +18,56 @@ const GalBox = () => {
   const [dungDir, setDungDir] = useState(-1);
   const [dung, setDung] = useState(1);
   const [imgNum, setImgNum] = useState(-1);
-  const [imgPos, setImgPos] = useState(0);
-  const touchStartX = useRef(null);
+  const [imgPos, setImgPos] = useState("0");
+  const [imgMotion, setImgMotion] = useState(false);
 
   const setNum = (i) => () => setImgNum(i);
-  const delNum = () => setImgNum(-1);
-
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
+  const delNum = () => {
+    setImgNum(-1);
+    setImgPos("0");
   };
 
-  const handleTouchMove = (e) => {
-    if (touchStartX.current === null) return;
-    const touchMoveX = e.touches[0].clientX;
-    const diffX = touchMoveX - touchStartX.current;
-    setImgPos(diffX);
-  };
+  const handleMouseDown = (pe) => {
+    pe.preventDefault();
+    let px = pe.clientX;
+    let dx = 0;
 
-  const handleTouchEnd = () => {
-    if (imgPos > 100) {
-      showPreviousImage();
-    } else if (imgPos < -100) {
-      showNextImage();
+    setImgMotion(false);
+    if (imgPos === "25rem") {
+      setImgPos(() => "0");
+      setImgNum((n) => (n - 1 + galImgs.length) % galImgs.length);
+    } else if (imgPos === "-25rem") {
+      setImgPos(() => "0");
+      setImgNum((n) => (n + 1) % galImgs.length);
     }
-    touchStartX.current = null;
+
+    const handleMouseMove = (e) => {
+      dx = e.clientX - px;
+      setImgPos(() => `${dx}px`);
+    };
+    const handleMouseUp = () => {
+      setImgMotion(true);
+      if (dx > 80) {
+        setImgPos("25rem");
+      } else if (dx < -80) {
+        setImgPos("-25rem");
+      } else {
+        setImgPos("0");
+      }
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
   };
 
-  const showPreviousImage = () => {
-    setImgPos("prev");
-    setTimeout(() => {
-      setImgNum((prevIndex) =>
-        prevIndex === 0 ? galImgs.length - 1 : prevIndex - 1
-      );
-      setImgPos(0);
-    }, 300); // 0.3초 후에 실행
-  };
-
-  const showNextImage = () => {
-    setImgPos("prev");
-    setTimeout(() => {
-      setImgNum((prevIndex) =>
-        prevIndex === galImgs.length - 1 ? 0 : prevIndex + 1
-      );
-      setImgPos(0);
-    }, 300); // 0.3초 후에 실행
-  };
+  useEffect(() => {
+    if (imgNum > -1) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [imgNum]);
 
   useEffect(() => {
     if (isFlashing) {
@@ -117,26 +122,16 @@ const GalBox = () => {
         ))}
       </div>
       {imgNum < 0 ? null : (
-        <div
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          className="gal-img"
-        >
-          <div className="fontRed" onClick={delNum}>
-            x{imgPos}
-          </div>
+        <div className="gal-img">
+          <button className="gal-img-close" onClick={delNum}>
+            x
+          </button>
           <div
             className="gal-img-inner"
+            onMouseDown={handleMouseDown}
             style={{
-              transform: `translateX(calc(-25rem + ${
-                imgPos === "prev"
-                  ? "25rem"
-                  : imgPos === "next"
-                  ? "-25rem"
-                  : `${imgPos}px`
-              }))`,
-              transition: imgPos === 0 ? "transform 0.3s ease" : "none",
+              transform: `translateX(-25rem) translateX(${imgPos})`,
+              transition: imgMotion ? "transform 0.3s ease" : null,
             }}
           >
             <img

@@ -44,8 +44,9 @@
   --fontLight: #898158;
   --fontRed: #ea826e;
   /* --backBasic: #f6f7f3; */
-  --backBasic: #f6f7f3;
-  --backGreen: #cbdb3b;
+  --backBasic: hsl(75, 20%, 95%);
+  --backDark: hsl(75, 20%, 85%);
+  --backDarker: hsl(75, 20%, 75%);
   font-size: 4vw;
 }
 
@@ -88,7 +89,7 @@ body {
   max-width: 500px;
   margin: 0 auto;
   padding: 0;
-  background-color: #fcfaf5;
+  background-color: var(--backBasic);
 }
 
 /* -------------------------------- */
@@ -406,7 +407,7 @@ body {
 .acc-box .acc-drawer {
   width: 60%;
   margin: 0 auto 0.5rem;
-  background-color: hsl(0, 0%, 80%);
+  background-color: var(--backDark);
 }
 
 .acc-box .acc-info {
@@ -416,7 +417,7 @@ body {
   padding: 0.5rem;
   border-radius: 0.5rem;
   font-size: 0.8rem;
-  background-color: hsl(0, 0%, 90%);
+  background-color: var(--backDarker);
 }
 
 .acc-box .acc-info div {
@@ -475,8 +476,18 @@ body {
   width: 25rem;
   height: 100vh;
   overflow: hidden;
+  z-index: 990;
   background-color: rgba(0, 0, 0, 0.7);
 }
+.gal-box button.gal-img-close {
+  display: flex;
+  color: var(--fontRed);
+  background: none;
+  font-size: 2.5rem;
+  width: fit-content;
+  margin: 0.5rem 0.5rem 0.5rem auto;
+}
+
 .gal-box .gal-img-inner {
   display: flex;
 }

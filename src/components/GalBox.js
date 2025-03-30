@@ -55,10 +55,14 @@ const GalBox = () => {
         setImgPos("0");
       }
       document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("touchmove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("touchend", handleMouseUp);
     };
     document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("touchmove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
+    document.addEventListener("touchend", handleMouseUp);
   };
 
   useEffect(() => {
@@ -129,6 +133,7 @@ const GalBox = () => {
           <div
             className="gal-img-inner"
             onMouseDown={handleMouseDown}
+            onTouchStart={handleMouseDown}
             style={{
               transform: `translateX(-25rem) translateX(${imgPos})`,
               transition: imgMotion ? "transform 0.3s ease" : null,

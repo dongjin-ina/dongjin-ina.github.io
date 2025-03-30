@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import shareIco from "../icons/share_ico.png";
 import copyIco from "../icons/copy_ico.png";
+import CopyButton from "./CopyButton";
 
 const FinalBox = () => {
   useEffect(() => {
@@ -56,10 +57,11 @@ const FinalBox = () => {
         카카오톡으로 청첩장 전하기
         <img src={shareIco} alt="" />
       </button>
-      <button className="copy-bttn" onClick={shareKakao}>
-        모바일 청첩장 주소 복사하기
-        <img src={copyIco} alt="" />
-      </button>
+      <CopyButton
+        text="https://dongjin-ina.github.io/"
+        almsg="모바일 청첩장 주소를 복사했습니다."
+        chld="모바일 청첩장 주소 복사하기"
+      />
     </div>
   );
 };

@@ -12,6 +12,30 @@ const galThumbImgs = importAll(
   require.context("../images", false, /galThumb\d+\.jpg$/)
 );
 
+const useLockZoom = (locked) => {
+  useEffect(() => {
+    const viewport = document.querySelector("meta[name=viewport]");
+    const originalContent = viewport?.getAttribute("content");
+
+    if (!viewport) return;
+
+    if (locked) {
+      viewport.setAttribute(
+        "content",
+        "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      );
+    } else {
+      viewport.setAttribute("content", "width=device-width, initial-scale=1.0");
+    }
+
+    return () => {
+      if (originalContent) {
+        viewport.setAttribute("content", originalContent);
+      }
+    };
+  }, [locked]);
+};
+
 const GalBox = () => {
   const [isFlashing, setIsFlashing] = useState(true);
   const [dungPos, setDungPos] = useState(0);
@@ -20,6 +44,8 @@ const GalBox = () => {
   const [imgNum, setImgNum] = useState(-1);
   const [imgPos, setImgPos] = useState("0");
   const [imgMotion, setImgMotion] = useState(false);
+
+  useLockZoom(imgNum >= 0);
 
   const setNum = (i) => () => setImgNum(i);
   const delNum = () => {

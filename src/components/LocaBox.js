@@ -8,19 +8,163 @@ import RevealOnce from "./RevealOnce";
 import mapImg from "../icons/map.png";
 import mapBack from "../icons/map_back.png";
 import mapSubway from "../icons/map_subway.png";
+import mapBusBegin from "../icons/map_bus_begin.png";
+import mapBusEnd from "../icons/map_bus_end.png";
+import mapBusHorz from "../icons/map_bus_horz.png";
+import mapBusDiag from "../icons/map_bus_diag.png";
+import mapWedding from "../icons/map_wedding.png";
+import mapRoute1 from "../icons/map_route1.png";
+import mapRoute2 from "../icons/map_route2.png";
+import mapRoute3 from "../icons/map_route3.png";
+import mapFireworks from "../icons/map_fireworks.png";
+import { useEffect, useState } from "react";
 
 const LocaMap = () => {
+  const [stage, setStage] = useState(0);
+
+  useEffect(() => {
+    if (stage === 0) {
+      setTimeout(() => {
+        setStage(1);
+      }, 300);
+    } else if (stage === 1) {
+      setTimeout(() => {
+        setStage(2);
+      }, 300);
+    } else if (stage === 2) {
+      setTimeout(() => {
+        setStage(3);
+      }, 300);
+    } else if (stage === 3) {
+      setTimeout(() => {
+        setStage(4);
+      }, 300);
+    } else if (stage === 4) {
+      setTimeout(() => {
+        setStage(5);
+      }, 400);
+    } else if (stage === 5) {
+      setTimeout(() => {
+        setStage(6);
+      }, 600);
+    }
+  }, [stage]);
+
   return (
     <div className="loca-map">
-      <img src={mapImg} alt="" style={{ width: "20rem" }} />
-      {/* <img
+      {/* <img src={mapImg} alt="" style={{ width: "20rem" }} /> */}
+      <img
         src={mapBack}
         alt=""
         style={{
           width: "20rem",
         }}
       />
-      <img src={mapSubway} alt="" style={{ width: "4rem" }} /> */}
+      <img
+        className={`loca-obj ${stage > -1 ? "shake" : ""}`}
+        src={mapSubway}
+        alt=""
+        style={{ width: "4rem", left: "4.1rem", top: "12.9rem" }}
+      />
+      <div
+        className="loca-obj"
+        style={{
+          width: stage > 0 ? "7.2rem" : "0rem",
+          transition: "width 0.3s ease",
+          overflow: "hidden",
+          left: "5.7rem",
+          top: "15.2rem",
+        }}
+      >
+        <img src={mapRoute1} alt="" style={{ width: "7.2rem" }} />
+      </div>
+      <img
+        className={`loca-obj ${stage > 1 ? "shake" : ""}`}
+        src={mapBusBegin}
+        alt=""
+        style={{ width: "5.4rem", left: "13.5rem", top: "15rem" }}
+      />
+      <img
+        className="loca-obj"
+        src={mapBusDiag}
+        alt=""
+        style={{
+          width: "1.3rem",
+          left: "11.0rem",
+          top: "14.5rem",
+          opacity: stage > 1 ? "1" : "0",
+          visibility: stage > 3 ? "hidden" : "visible",
+          transform: stage > 2 ? "translate(0.8rem,-1.6rem)" : "",
+          transition: "opacity 0.3s ease, transform 0.3s ease-in",
+        }}
+      />
+      <img
+        className="loca-obj"
+        src={mapBusHorz}
+        alt=""
+        style={{
+          width: "2.2rem",
+          left: "12.1rem",
+          top: "13rem",
+          visibility: stage === 4 ? "visible" : "hidden",
+          transform: stage > 3 ? "translate(2.7rem)" : "",
+          transition: "transform 0.4s linear",
+        }}
+      />
+      <div
+        className="loca-obj"
+        style={{
+          width: stage > 3 ? "5.8rem" : "0",
+          overflow: "hidden",
+          left: "12.5rem",
+          top: "9.4rem",
+          transition: "width 0.8s linear",
+        }}
+      >
+        <img src={mapRoute2} alt="" style={{ width: "5.8rem" }} />
+      </div>
+      <img
+        className="loca-obj"
+        src={mapBusDiag}
+        alt=""
+        style={{
+          width: "1.3rem",
+          left: "16.1rem",
+          top: "12.1rem",
+          // opacity: stage > 4 ? "1" : "0",
+          visibility: stage > 4 ? "visible" : "hidden",
+          transform: stage > 4 ? "translate(1.7rem,-4.8rem)" : "",
+          transition: "transform 0.7s ease-out",
+        }}
+      />
+      <img
+        className={`loca-obj ${stage > 5 ? "shake" : ""}`}
+        src={mapBusEnd}
+        alt=""
+        style={{
+          width: "3rem",
+          left: "18.9rem",
+          top: "8.9rem",
+        }}
+      />
+      <img
+        className="loca-obj"
+        src={mapWedding}
+        alt=""
+        style={{ width: "4.2rem", left: "5.7rem", top: "7.5rem" }}
+      />
+      <img
+        className="loca-obj"
+        src={mapRoute3}
+        alt=""
+        style={{ width: "11rem", left: "9.4rem", top: "5.4rem" }}
+      />
+      <img
+        className="loca-obj"
+        src={mapFireworks}
+        alt=""
+        style={{ width: "5.2rem", left: "4.7rem", top: "0.7rem" }}
+      />
     </div>
   );
 };
@@ -64,7 +208,6 @@ const LocaBox = () => {
         /> */}
       </div>
       <LocaMap />
-      {/* <img width="90%" src={mapImg} alt="지도" /> */}
       <div className="bttns">
         <LocaButton
           text="네이버지도"

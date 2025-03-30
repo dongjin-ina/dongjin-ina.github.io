@@ -304,11 +304,20 @@ body {
   margin-top: 0.5rem;
 }
 
+.loca-box .loca-map {
+  position: relative;
+}
+
+.loca-box .loca-map .loca-obj {
+  position: absolute;
+  z-index: 900;
+}
+
 .loca-box .bttns {
   display: flex;
   justify-content: space-between;
   width: 75%;
-  margin: 2rem auto 0;
+  margin: 0.5rem auto 0;
 }
 
 .loca-box .bttns button {
@@ -329,7 +338,7 @@ body {
 
 .loca-box .bttn-notice {
   font-size: 0.8rem;
-  margin: 1rem auto 0;
+  margin: 0.5rem auto 2rem;
 }
 
 .loca-box .howtoget .object {
@@ -338,10 +347,6 @@ body {
   font-size: 1rem;
   font-weight: bold;
   margin: 2rem 1rem 0 2.8rem;
-}
-.loca-box .howtoget .object img {
-  /* width: 1.3rem; */
-  /* margin-right: 0.5rem; */
 }
 .loca-box .howtoget .object img.bus_ico {
   margin-right: 0.7rem;
@@ -373,6 +378,73 @@ body {
 }
 .loca-box .notice p {
   margin: 0.5rem;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+  6% {
+    transform: rotate(3deg);
+  }
+  8% {
+    transform: rotate(6deg);
+  }
+  11% {
+    transform: rotate(3deg);
+  }
+  22% {
+    transform: rotate(-3deg);
+  }
+  25% {
+    transform: rotate(-6deg);
+  }
+  28% {
+    transform: rotate(-3deg);
+  }
+  39% {
+    transform: rotate(3deg);
+  }
+  42% {
+    transform: rotate(6deg);
+  }
+  44% {
+    transform: rotate(3deg);
+  }
+  56% {
+    transform: rotate(-3deg);
+  }
+  58% {
+    transfrom: rotate(-6deg);
+  }
+  61% {
+    transform: rotate(-3deg);
+  }
+  72% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(6deg);
+  }
+  78% {
+    transform: rotate(3deg);
+  }
+  89% {
+    transform: rotate(-3deg);
+  }
+  92% {
+    transform: rotate(-6deg);
+  }
+  94% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.shake {
+  animation: shake 0.5s linear;
 }
 
 /* ------------ */

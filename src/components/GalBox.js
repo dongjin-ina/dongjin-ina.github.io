@@ -27,43 +27,51 @@ const GalBox = () => {
     setImgPos("0");
   };
 
-  const handleMouseDown = (pe) => {
-    pe.preventDefault();
-    let px = pe.clientX;
-    let dx = 0;
+  const handleMouseDown =
+    (b = true) =>
+    (pe) => {
+      pe.preventDefault();
+      let px = b ? pe.clientX : pe.touches[0].clientX;
+      let dx = 0;
 
-    setImgMotion(false);
-    if (imgPos === "25rem") {
-      setImgPos(() => "0");
-      setImgNum((n) => (n - 1 + galImgs.length) % galImgs.length);
-    } else if (imgPos === "-25rem") {
-      setImgPos(() => "0");
-      setImgNum((n) => (n + 1) % galImgs.length);
-    }
-
-    const handleMouseMove = (e) => {
-      dx = e.clientX - px;
-      setImgPos(() => `${dx}px`);
-    };
-    const handleMouseUp = () => {
-      setImgMotion(true);
-      if (dx > 80) {
-        setImgPos("25rem");
-      } else if (dx < -80) {
-        setImgPos("-25rem");
-      } else {
-        setImgPos("0");
+      setImgMotion(false);
+      if (imgPos === "25rem") {
+        setImgPos(() => "0");
+        setImgNum((n) => (n - 1 + galImgs.length) % galImgs.length);
+      } else if (imgPos === "-25rem") {
+        setImgPos(() => "0");
+        setImgNum((n) => (n + 1) % galImgs.length);
       }
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("touchmove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-      document.removeEventListener("touchend", handleMouseUp);
+
+      const handleMouseMove = (e) => {
+        dx = (b ? e.clientX : e.touches[0].clientX) - px;
+        setImgPos(() => `${dx}px`);
+      };
+      const handleMouseUp = () => {
+        setImgMotion(true);
+        if (dx > 80) {
+          setImgPos("25rem");
+        } else if (dx < -80) {
+          setImgPos("-25rem");
+        } else {
+          setImgPos("0");
+        }
+        if (b) {
+          document.removeEventListener("mousemove", handleMouseMove);
+          document.removeEventListener("mouseup", handleMouseUp);
+        } else {
+          document.removeEventListener("touchmove", handleMouseMove);
+          document.removeEventListener("touchend", handleMouseUp);
+        }
+      };
+      if (b) {
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mouseup", handleMouseUp);
+      } else {
+        document.addEventListener("touchmove", handleMouseMove);
+        document.addEventListener("touchend", handleMouseUp);
+      }
     };
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("touchmove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-    document.addEventListener("touchend", handleMouseUp);
-  };
 
   useEffect(() => {
     if (imgNum > -1) {

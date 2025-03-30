@@ -89,7 +89,7 @@ const LocaBox = () => {
       <div className="howtoget">
         <div>
           <div className="object">
-            <img src={bus} alt="대중교통" />
+            <img className="bus_ico" src={bus} alt="대중교통" />
             <div>대중교통</div>
           </div>
           <div className="description">
@@ -99,15 +99,13 @@ const LocaBox = () => {
         </div>
         <div>
           <div className="object">
-            <img src={car} alt="주차안내" />
+            <img className="car_ico" src={car} alt="주차안내" />
             <div>주차안내</div>
           </div>
           <div className="description">
             <p>웨딩홀 내 지하주차장이 마련되어 있습니다.</p>
-            <p className="fontRed">
-              서울대 정문 및 후문 통과시 통행료가 부과되오니
-            </p>
-            <p className="fontRed">후문 통과 전 좌회전하시기 바랍니다.</p>
+            <p>서울대 정문 및 후문 통과시 통행료가 부과되오니</p>
+            <p>후문 통과 전 좌회전하시기 바랍니다.</p>
           </div>
         </div>
         <div className="notice">

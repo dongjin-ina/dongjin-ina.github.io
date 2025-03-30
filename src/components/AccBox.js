@@ -68,7 +68,7 @@ const ShowAccBttn = ({ text, list }) => {
 const AccBox = () => {
   return (
     <RevealOnce className="acc-box">
-      <img src={accImg} alt="" width="100%" />
+      <img className="acc-img" src={accImg} alt="" width="100%" />
       <div className="title">마음 전하실 곳</div>
       <div className="acc-letter">
         <p>참석이 어려우신 분들을 위해</p>

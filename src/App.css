@@ -378,8 +378,12 @@ body {
 /* ------------ */
 
 .acc-box {
-  margin: 0 auto 0;
+  margin: 4rem auto 0;
   padding: 0 0 2rem;
+}
+
+.acc-box .acc-img {
+  margin-bottom: -0.5rem;
 }
 
 .acc-box .acc-bttns {
@@ -518,6 +522,30 @@ body {
 }
 .thanks-box .title-text .dongjin-ina {
   font-size: 0.9rem;
+}
+/* ----------------------- */
+
+.final-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 7rem;
+  background-color: var(--backbasic);
+}
+
+.final-box button {
+  width: fit-content;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+.final-box button img {
+  margin: 0 0 0 0.5rem;
+}
+
+.final-box .share-bttn {
+  background-color: #fae300;
 }
 
 /* ----------------------- */

@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import shareIco from "../icons/share_ico.png";
+import copyIco from "../icons/copy_ico.png";
 
 const FinalBox = () => {
   useEffect(() => {
@@ -49,8 +51,15 @@ const FinalBox = () => {
   };
 
   return (
-    <div>
-      <button onClick={shareKakao}>카카오톡으로 청첩장 전하기</button>
+    <div className="final-box">
+      <button className="share-bttn" onClick={shareKakao}>
+        카카오톡으로 청첩장 전하기
+        <img src={shareIco} alt="" />
+      </button>
+      <button className="copy-bttn" onClick={shareKakao}>
+        모바일 청첩장 주소 복사하기
+        <img src={copyIco} alt="" />
+      </button>
     </div>
   );
 };
